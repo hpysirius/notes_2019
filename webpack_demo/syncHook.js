@@ -17,6 +17,9 @@ queue.tap('3', name => {
 
 // 发布
 queue.call('hpysirius', 'hpysirius1');
+
+
+// node syncHook执行该文件
 // 执行结果
 // 传入的参数需要和new实例的时候保持一致，否则获取不到多传的参数
 // hpysirius hpysirius1 1
