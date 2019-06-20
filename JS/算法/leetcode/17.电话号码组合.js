@@ -5,9 +5,7 @@
 const letterCombinations = function (digits) {
   function cartesianProduct(sets) {
     const head = sets.shift() || [];
-    if (sets.length === 0) {
-      return head.map(item => item);
-    }
+    if (sets.length === 0) return head;
 
     const tailProduct = cartesianProduct(sets);
     return flatMap(
@@ -19,8 +17,9 @@ const letterCombinations = function (digits) {
     );
   }
 
-  function flatMap(fn, array) {
-    return [].concat(...array.map(fn));
+  function flatMap(fn, array = []) {
+      return [].concat(...array.map(fn));
+    // return array.map(fn).flat(1);
   }
   const obj = {
     2: ['a', 'b', 'c'],
@@ -32,14 +31,13 @@ const letterCombinations = function (digits) {
     8: ['t', 'u', 'v'],
     9: ['w', 'x', 'y', 'z']
   };
-  const arr = digits.toString().split('');
-  const len = arr.length;
+  const len = digits.length;
   const res = [];
   for (let i = 0; i < len; i++) {
-    res.push(obj[arr[i]]);
+    res.push(obj[digits.charAt(i)]);
   }
   return cartesianProduct(res);
 };
 
-const res = letterCombinations('24');
+const res = letterCombinations('23');
 console.log(res);
