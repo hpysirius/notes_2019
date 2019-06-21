@@ -8,10 +8,8 @@
  * 6. 绑定函数new出来对象能继承原函数的属性
  */
 
-Function.prototype.bind2 = function (...args) {
+Function.prototype.bind2 = function (context, ...args1) {
   const self = this;
-  const context = args[0];
-  const args1 = args.slice(1);
   function fBound(...args2) {
     return self.apply(this instanceof fBound ? this : context, [...args1, ...args2]);
   }
