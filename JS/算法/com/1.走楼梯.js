@@ -21,5 +21,5 @@ function fLoop(n, a = 1, b = 2) {
 }
 // n = 3
 // fTail(3, 1, 2) => fTail(2, 2, 3) => fTail(1, 3, 5)
-console.log(fTail(3));
-console.log(fLoop(3));
+console.log(fTail(5));
+console.log(fLoop(5));
