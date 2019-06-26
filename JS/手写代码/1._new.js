@@ -7,6 +7,9 @@
 function _new(A, ...args) {
   const o = {};
   o.__proto__ = A.prototype;
-  A.apply(this, args);
+  const res = A.apply(this, args);
+  if (typeof (res) === 'object' || typeof (res) === 'function') {
+    return res;
+  }
   return o;
 }
