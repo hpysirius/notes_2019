@@ -1,21 +1,3 @@
-// console.log(1);
-
-// const curry = (...args1) => {
-//     // const
-//     const len = args1.length;
-//     const _c = (...args2) => {
-//         args2.length >= len ? fn.apply(this, args2) : _c(...[...args1, ...arg2]);
-//     }
-//     return _c;
-// }
-
-// sum = function(...args){
-//     return args.reduce((a, b) => {
-//         a =
-//     })
-// }
-
-
 const sum = (...args) => args.reduce((total, num) => total + num);
 
 
