@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+                <div id='con'>this is con</div>
+                <script>
+                var con = document.getElementById('con');
+                con.onclick = function () {
+                    setTimeout(() => console.log('timeout'))
+
+                    Promise.resolve().then(() => {
+                        console.log('promise1')
+                        Promise.resolve().then(() => console.log('promise2')).then(() => console.log('aaa'))
+                        Promise.resolve().then(() => console.log('promise3'))
+                    }).then(() => console.log('promise4'))
+
+                    console.log('normal')
+                };
+                </script>
+</body>
+</html>

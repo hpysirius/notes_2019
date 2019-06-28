@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id='con'>this is con</div>
+        <script>
+        var con = document.getElementById('con');
+        
+        con.onclick = function () {
+            // for(var j = 0; j < 100; j++){
+            //     con.textContent = `task---${j}`;
+            // }
+           setTimeout(function  setTimeout1() {
+                con.textContent = 'task1';
+                for(var i = 0; i  < 25000; i++){
+                    // console.log(111);
+                    Promise.resolve().then(function(){
+                         con.textContent = i;
+                    });
+                }
+           }, 0);
+            setTimeout(function  setTimeout2() {
+                    con.textContent = 'task2';
+            }, 0);
+        };
+        </script>
+</body>
+</html>
