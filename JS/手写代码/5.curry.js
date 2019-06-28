@@ -6,3 +6,9 @@ const curry = (fn) => {
 }
   ;
 
+// 缩减
+const curry = (fn, ...args1) => 
+args1.length < fn.length
+? (...args2) => curry(fn, ...args1, ...args2) : fn(...args1);
+
+
