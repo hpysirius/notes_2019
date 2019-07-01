@@ -18,7 +18,7 @@ const getJSON = (url) => {
   return promise;
 };
 
-getJSON('./p.json').then((json) => {
+getJSON('./a.json').then((json) => {
   console.log(json);
   console.log(`Contents: ${json}`);
 }, (error) => {
