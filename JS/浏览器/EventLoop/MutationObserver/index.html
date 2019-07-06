@@ -1,12 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-    <script src="./index.js"></script>
+    <div class="article">11</div>
+    <!-- <script src="./index.js"></script> -->
+    <script>
+        // var observer = new MutationObserver(function (mutations, observer) {
+        //     console.log(mutations);
+        //     console.log(observer)
+        // });
+        let queue = [];
+        function nextTick() {
+            draining = true;
+            var i, oldQueue;
+            var len = queue.length;
+            while (len) {
+                oldQueue = queue;
+                // 把queue清空
+                queue = [];
+                i = -1;
+                // 执行当前所有回调
+                while (++i < len) {
+                    oldQueue[i]();
+                }
+                len = queue.length;
+            }
+            draining = false;
+        }
+        var observer = new MutationObserver(nextTick);
+        var article = document.querySelector('.article');
+
+        var options = {
+            'childList': true,
+            'attributes': true,
+            'characterData': true
+        };
+
+        observer.observe(article, options);
+
+        article.onclick = function () {
+            console.log(1);
+            article.innerHTML = '22'
+            article.innerHTML = '33'
+            article.innerHTML = '44'
+            article.innerHTML = '44'
+            article.innerHTML = '44'
+            article.innerHTML = '44'
+        }
+
+    </script>
 </body>
+
 </html>
