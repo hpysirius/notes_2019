@@ -37,7 +37,7 @@
 //     )
 
 
-Promise.resolve()
+Promise.resolve(1)
     .then(() => {
         console.log('promise 1');
         return Promise.resolve().then(
