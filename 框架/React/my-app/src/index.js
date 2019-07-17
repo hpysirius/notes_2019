@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { count, setCount } from './Common/a';
+
+// Utils = 1;
+setCount();
+console.log(count, 'a');
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
