@@ -4,13 +4,15 @@ import './App.css';
 import DemoInput from './component/Input';
 import DemoList from './component/List';
 import SetS from './component/SetS';
+import Control from './component/Control/index'
 
 function App() {
   return (
     <div className="App">
-      <DemoInput />
+      {/* <DemoInput />
       <DemoList />
-      <SetS />
+      <SetS /> */}
+      <Control />
     </div>
   );
 }
