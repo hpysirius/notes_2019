@@ -3,6 +3,7 @@ import { connect } from 'dva';
 
 import Child from './Child';
 
+
 @connect(
   ({ example }) => example,
   (dispatch) => ({
