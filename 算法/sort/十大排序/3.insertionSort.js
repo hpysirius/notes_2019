@@ -8,8 +8,8 @@
 
 function insertionSort(arr) {
   const len = arr.length;
-  let preIndex; let
-    current;
+  let preIndex;
+  let current;
   for (let i = 1; i < len; i++) {
     preIndex = i - 1;
     current = arr[i];
@@ -33,3 +33,16 @@ console.log(insertionSort(a));
 // i = 3， preIndex = 2, current = 21
 // 循环两次
 // arr = [1, 21, 33, 43, 4];
+
+
+function insertionSort(arr) {
+  const len = arr.length;
+  let preIndex, current;
+  for (let i = 1; i < len; i++) {
+    current = arr[i];
+    preIndex = i - 1;
+    while(preIndex >= 0 && arr[preIndex] > current){
+      
+    }
+  }
+}
