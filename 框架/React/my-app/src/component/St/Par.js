@@ -15,7 +15,13 @@ export default class Consumer extends React.Component {
             value
         })
     }
+    componentWillMount(){
+        this.setState({
+            value: 3
+        })
+    }
     render() {
+        console.log(this.state.value, 'render');
         const cProps = {
             getResult: this.getResult,
             value: this.state.value
