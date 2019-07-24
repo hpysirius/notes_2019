@@ -5,6 +5,7 @@ import DemoInput from './component/Input';
 import DemoList from './component/List';
 import SetS from './component/SetS';
 import Control from './component/Control/index'
+import Par from './component/St/Par'
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       {/* <DemoInput />
       <DemoList />
       <SetS /> */}
-      <Control />
+      {/* <Control /> */}
+      <Par />
     </div>
   );
 }
