@@ -1,38 +1,11 @@
-const entry = {
-    'a.b.c.dd': 'abcdd',
-    'a.d.xx': 'adxx',
-    'a.e': 'ae',
-};
-function changeToNormal(obj) {
-    let newObj = {};
-    let t = newObj;
-    const keys = Object.keys(obj);
-    for (key of keys) {
-        const fArr = key.split('.');
-        while (fArr.length) {
-            const val = fArr.length === 1 ? entry[key] : {};
-            const tmpKey = fArr.shift();
-            t[tmpKey] = t[tmpKey] || val;
-            t = t[tmpKey];
-        }
-        t = newObj;
-    }
-    return newObj;
-}
-//   const changObjStructureOfNormal = output => {
-//     const keys = Object.keys(output);
-//     const resObj = {};
-//     for (const key of keys) {
-//       const everyKey = key.split('.');
-//       everyKey.reduce((pre, next, index, array) => {
-//         if (index === array.length - 1) {
-//           pre[next] = output[key];
-//           return;
-//         }
-//         pre[next] = resObj[next] || {};
-//         return pre[next];
-//       }, resObj);
-//     }
-//     return resObj;
-//   };
-console.log(changeToNormal(entry));
+// 如传入的数组元素为[123, "meili", "123", "mogu", 123]，则输出：[123, "meili", "123", "mogu"]
+
+// 如传入的数组元素为[123, [1, 2, 3], [1, "2", 3], [1, 2, 3], "meili"]，则输出：[123, [1, 2, 3], [1, "2", 3], "meili"]
+
+// 如传入的数组元素为[123, {a: 1}, {a: {b: 1}}, {a: "1"}, {a: {b: 1}}, "meili"]，则输出：[123, {a: 1}, {a: {b: 1}}, {a: "1"}, "meili"]
+
+
+const arr = [123, {a: 1}, {a: {b: 1}}, {a: "1"}, {a: {b: 1}}, "meili"];
+const unique = (arr) => [...new Set(arr.map(JSON.stringify))].map(JSON.parse)
+
+console.log(unique(arr));
