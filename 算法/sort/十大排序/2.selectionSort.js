@@ -5,22 +5,23 @@
  * 放到已排序的末尾
  * 重复操作
  */
-function selectionSort(arr) {
-  const len = arr.length;
-  let minIndex; let
-    temp;
-  for (let i = 0; i < len - 1; i++) {
+
+function selectionSort(arr){
+  const size = arr.length;
+  let minIndex, tmp;
+  for(let i = 0; i < size - 1; i++){
     minIndex = i;
-    for (let j = i + 1; j < len; j++) {
-      if (arr[j] < arr[minIndex]) {
+    for(let j = i + 1; j < size; j++){
+      if(arr[j] < arr[minIndex]){
         minIndex = j;
       }
     }
-    temp = arr[i];
+    tmp = arr[i];
     arr[i] = arr[minIndex];
-    arr[minIndex] = temp;
+    arr[minIndex] = tmp;
   }
   return arr;
 }
-const a = [1, 43, 21, 4];
+
+const a = [2,41,12];
 console.log(selectionSort(a));
