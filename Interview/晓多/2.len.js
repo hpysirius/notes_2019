@@ -37,7 +37,6 @@ function getLen(root, node1, node2){
         })
     })
     return length;
-
 }
 
 
