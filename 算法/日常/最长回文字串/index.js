@@ -13,13 +13,12 @@ function manacher(str) {
             mx = id + p[i];
         }
     }
-
     const i_res = p.findIndex(it => Math.max(...p) === it);
     const s_res = newStr.slice(i_res - (p[i_res] - 1), i_res + p[i_res])
     return s_res.replace(/\#/g, '');
 }
 
-console.log(getP('abcdcbrd'));
+console.log(manacher('abbadd'));
 
 var longestPalindrome = function (s) {
     // babad
