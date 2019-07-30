@@ -6,6 +6,7 @@ import DemoList from './component/List';
 import SetS from './component/SetS';
 import Control from './component/Control/index'
 import Par from './component/St/Par'
+import Up from './component/Up';
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
       <DemoList />
       <SetS /> */}
       {/* <Control /> */}
-      <Par />
+
+      {/* <Par /> */}
+      <Up />
     </div>
   );
 }
