@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'antd';
 
 class Child extends React.Component {
   constructor(props) {
@@ -12,9 +13,10 @@ class Child extends React.Component {
   render() {
     const { page, updateState } = this.props;
     return (
-      <div onClick={() => updateState({ page: 2 })}>
+      <div>
         Child
         {page}
+        <Button type="primary">Primary</Button>
       </div>
     )
   }
