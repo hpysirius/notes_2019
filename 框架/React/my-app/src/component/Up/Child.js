@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class a extends React.PureComponent {
+export default class Child extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -14,7 +14,7 @@ export default class a extends React.PureComponent {
         console.log('componentDidMount');
     }
     render() {
-        console.log(this.props.val, 'aaaa');
+        console.log(this.props, 'aaaa');
         return (
            <div>{this.props.val}</div>
         )

@@ -1,22 +1,28 @@
 import React from 'react';
-import Child from './Child';
+import ChildCom from './Child';
 
 export default class Index extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            val: 1
+            val: 1,
+            obj: {
+                name: 'hh',
+                val: 1
+            }
         }
     }
-    onChange(val) {
-        this.setState({ val })
+    onChange = (e) => {
+        const { obj } = this.state;
+        obj.val = e.target.value;
+        console.log(obj);
+        this.setState({ val: e.target.value, obj });
     }
     render() {
-        console.log(111);
         return (
             <div>
-                <input onChange={(val) => this.onChange(val)} />
-                <Child val={this.state.val} />
+                <input onChange={(e) => this.onChange(e)} />
+                <ChildCom obj={this.state.obj} />
             </div>
 
         )
