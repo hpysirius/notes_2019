@@ -1,0 +1,1 @@
+1. [少儿](https://studio.code.org/s/course1/stage/6/puzzle/3)
