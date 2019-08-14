@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* @keyframes tr
+        {
+            from {top:0;}
+            to {top:200px;}
+        }
+      
+        .target:hover {
+            transform: translate(0 ,200px);
+        } */
+        .target {
+            width: 200px;
+            height: 200px;
+            background-color: #ddd;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="target" class="target">
+
+    </div>
+</body>
+<script>
+let target = document.getElementById('target');
+for(let i = 0; i <= 2 * 1000; i++){
+    setTimeout(() => {
+        target.style.top = i * 0.1 + 'px';
+    }, i);
+}
+</script>
+</html>
