@@ -1,6 +1,5 @@
-Function.prototype.call2 = function (content = window) {
+Function.prototype.call2 = function (content = window, ...args) {
   content.fn = this;
-  const args = [].slice(arguments, 1);
   const result = content.fn(...args);
   delete content.fn;
   return result;
