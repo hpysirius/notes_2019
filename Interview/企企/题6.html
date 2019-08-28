@@ -7,16 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        /* @keyframes tr
-        {
-            from {top:0;}
-            to {top:200px;}
-        }
-      
-        .target:hover {
-            transform: translate(0 ,200px);
-        } */
-        .target {
+        #target {
             width: 200px;
             height: 200px;
             background-color: #ddd;
@@ -28,16 +19,31 @@
 </head>
 
 <body>
-    <div id="target" class="target">
+    <div id="target">
 
     </div>
 </body>
 <script>
 let target = document.getElementById('target');
-for(let i = 0; i <= 2 * 1000; i++){
-    setTimeout(() => {
-        target.style.top = i * 0.1 + 'px';
-    }, i);
+let left = 0;
+let flag = true;
+function render() {
+    left == 0 ? flag = true : left == 100 ? flag = false : '';
+    flag ? target.style.left = ` ${left++}px` :
+        target.style.left = ` ${left--}px`;
 }
+(function animloop() {
+    render();
+    requestAnimationFrame(animloop);
+})();
+// let target = document.getElementById('target');
+// let left = 0;
+// let flag = true;
+// setInterval(() => {
+//     if(left === 0) flag = true;
+//     if(left === 100) flag = false;
+//     flag ? target.style.left = `${left++}px` : target.style.left = `${left--}px`;
+// }, 1000 / 60);
 </script>
+
 </html>
