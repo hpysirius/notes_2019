@@ -24,7 +24,7 @@
 const debounce = (fn, await = 100) => {
 	let timer;
 	return (...args) => {
-    if(timer) clearTimeout(timer);
+		if (timer) clearTimeout(timer);
 		timer = setTimeout(() => {
 			fn.apply(this, args);
 		}, await)
@@ -33,5 +33,5 @@ const debounce = (fn, await = 100) => {
 
 const deFn = debounce(fn);
 for (let i = 0; i < 100; i++) {
-  setTimeout(() => deFn(i), 10);
+	setTimeout(() => deFn(i), 10);
 }
