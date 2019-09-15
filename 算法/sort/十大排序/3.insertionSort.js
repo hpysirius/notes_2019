@@ -6,24 +6,23 @@
  * （如果待插入的元素与有序序列中的某个元素相等，则将待插入元素插入到相等元素的后面。）
  */
 
-function insertionSort(arr) {
-  const len = arr.length;
-  let preIndex;
-  let current;
-  for (let i = 1; i < len; i++) {
-    preIndex = i - 1;
-    current = arr[i];
-    while (preIndex >= 0 && arr[preIndex] > current) {
-      arr[preIndex + 1] = arr[preIndex];
-      preIndex--;
+const insertionSort = nums => {
+  let n = nums.length;
+  if (n <= 1) return nums;
+  for (let i = 0; i < n; i++) {
+    let val = nums[i];
+    let j = i - 1;
+    for (; j >= 0; j--) {
+      if (nums[j] > val) nums[j + 1] = nums[j]
+      else break;
     }
-    arr[preIndex + 1] = current;
+    nums[j + 1] = val;
   }
-  return arr;
+  return nums;
 }
 
 
-const a = [5,4,3,6,2];
+const a = [5, 4, 3, 6, 2];
 console.log(insertionSort(a));
 
 // i = 1, preIndex = 0; while = true
