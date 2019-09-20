@@ -40,10 +40,10 @@
 Promise.resolve(1)
     .then(() => {
         console.log('promise 1');
-        return Promise.resolve().then(
+        Promise.resolve().then(
             () => {
                 console.log('promise 2');
-                return Promise.resolve().then(
+                Promise.resolve().then(
                     () => {
                         console.log('promise 3');
                     }
