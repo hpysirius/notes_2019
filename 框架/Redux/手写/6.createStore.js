@@ -3,7 +3,13 @@ const createStore = (reducer, initState) => {
     let listeners = [];
 
     // 订阅
-    const subscribe = listener => listeners.push(listener);
+    const subscribe = listener => {
+        listeners.push(listener);
+        return function unsubscribe() {
+            const index = listeners.indexOf(listener);
+            listeners.splice(index, 1);
+        }
+    };
 
     // dispatch
     const dispatch = action => {
@@ -11,6 +17,7 @@ const createStore = (reducer, initState) => {
         for (let listener of listeners)
             listener();
     }
+
     // getState
     const getState = () => state;
 
