@@ -22,8 +22,8 @@ const quick_sort = (q, l, r) => {
   if (l >= r) return;
   let x = q[l + r >> 1], i = l - 1, j = r + 1;
   while (i < j) {
-    do { i++ } while (q[i] < x);
-    do { j-- } while (q[j] > x);
+    while (q[++i] < x);
+    while (q[--j] > x);
     if(i < j) swap(q, i, j);
   }
   quick_sort(q, l, j);
