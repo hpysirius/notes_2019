@@ -13,10 +13,7 @@
 //   return quickSort(left).concat([pivot], quickSort(right));
 // };
 
-const swap = (q, i, j) => {
-  [q[i], q[j]] = [q[j], q[i]];
-}
-
+const swap = (q, i, j) => [q[i], q[j]] = [q[j], q[i]];
 
 const quick_sort = (q, l, r) => {
   if (l >= r) return;
@@ -26,10 +23,10 @@ const quick_sort = (q, l, r) => {
     while (q[--j] > x);
     if(i < j) swap(q, i, j);
   }
+  console.log(l, j);
   quick_sort(q, l, j);
   quick_sort(q, j + 1, r);
 }
-
 
 let q = [49, 59, 88, 37, 98, 97, 68, 54, 31, 3];
 quick_sort(q, 0, q.length - 1);
