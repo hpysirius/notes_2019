@@ -14,23 +14,23 @@
 // };
 
 const swap = (q, i, j) => {
-  let temp = q[i];
-  q[i] = q[j];
-  q[j] = temp;
+  [q[i], q[j]] = [q[j], q[i]];
 }
+
 
 const quick_sort = (q, l, r) => {
   if (l >= r) return;
-  let x = q[l], i = l - 1, j = r + 1;
+  let x = q[l + r >> 1], i = l - 1, j = r + 1;
   while (i < j) {
     do { i++ } while (q[i] < x);
     do { j-- } while (q[j] > x);
-    if (i < j) swap(q, i, j);
+    if(i < j) swap(q, i, j);
   }
   quick_sort(q, l, j);
   quick_sort(q, j + 1, r);
 }
 
-let q = [3, 2, 6, 4, 1];
+
+let q = [49, 59, 88, 37, 98, 97, 68, 54, 31, 3];
 quick_sort(q, 0, q.length - 1);
 console.log(q);
